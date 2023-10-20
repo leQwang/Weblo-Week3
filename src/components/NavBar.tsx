@@ -68,7 +68,7 @@ function NavBar() {
   return (
     <div>
       <div
-        className="mt-20 fixed h-screen w-screen bg-[#1f1f1f] z-20 -left-[110%] duration-200 delay-75 text-white md:hidden px-8"
+        className="mt-20 fixed h-screen w-screen bg-[#1f1f1f] z-20 -left-[110%] duration-200 delay-75 text-white lg:hidden px-8"
         id="mobile-menu"
       >
         <ul className="flex flex-col gap-6 py-5">
@@ -367,7 +367,7 @@ function NavBar() {
 
         <div className="flex flex-row items-center cursor-pointer">
           <img className="mr-5 w-6 h-6" src={language} alt="language icon" />
-          <div className="md:hidden mr-5 bg-[#282828] p-2 rounded">
+          <div className="lg:hidden mr-10 bg-[#282828] p-2 rounded">
             <img
               className="w-9"
               src={hamburger}
@@ -376,7 +376,7 @@ function NavBar() {
               onClick={menuToggle}
             />
           </div>
-          <div className="hidden w-32 h-7 mr-5 md:flex justify-center rounded-xl text-white bg-gradient-to-t from-pink-500 to-red-500 hover:opacity-[90%]">
+          <div className="hidden w-32 h-7 mr-5 lg:flex justify-center rounded-xl text-white bg-gradient-to-t from-pink-500 to-red-500 hover:opacity-[90%]">
             Chơi Ngay
           </div>
         </div>

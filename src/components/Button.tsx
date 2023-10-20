@@ -10,7 +10,8 @@ function Button(props: ButtonProps) {
     window.location.href = props.link || "#";
   };
   return (
-    <button onClick={redirectToLink}
+    <button
+      onClick={redirectToLink}
       className=" relative bg-[#ff4655] text-white p-4 px-12 mb-6
         before:contents[''] before:w-[110%] before:border-t before:border-l before:border-r before:h-6 before:border-white before:absolute before:-top-2 before:-left-[5%]
         after:contents[''] after:w-[110%] after:border-b after:border-l after:border-r after:h-6 after:border-white after:absolute after:-bottom-2 after:-right-[5%] button__cta"

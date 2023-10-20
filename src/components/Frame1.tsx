@@ -4,9 +4,9 @@ import title from "../img/title.png";
 
 function Frame1() {
   const scrollToFrame2 = () => {
-    const element = document.getElementById('frame2');
+    const element = document.getElementById("frame2");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
   return (
@@ -46,7 +46,8 @@ function Frame1() {
           sắc của cộng đồng Valorant Việt Nam trong năm 2022.
         </p>
 
-        <button onClick={scrollToFrame2}
+        <button
+          onClick={scrollToFrame2}
           className=" relative bg-[#ff4655] text-white p-4 px-12 mb-6
         before:contents[''] before:w-[110%] before:border-t before:border-l before:border-r before:h-6 before:border-white before:absolute before:-top-2 before:-left-[5%]
         after:contents[''] after:w-[110%] after:border-b after:border-l after:border-r after:h-6 after:border-white after:absolute after:-bottom-2 after:-right-[5%] button__cta"
