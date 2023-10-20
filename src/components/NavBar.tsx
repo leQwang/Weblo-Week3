@@ -1,37 +1,112 @@
 import React, { useState, useRef, useEffect} from "react";
 import language from "../img/icon-language.png";
 import hamburger from "../img/hamburger.svg";
+import {navItems} from "../data/dataList";
 
 function NavBar() {
   const [open, setOpen] = useState<boolean>(false);
+  const [isMenuMobileItem1, setMenuMobileItem1] = useState<boolean>(false);
+  const [isMenuMobileItem5, setMenuMobileItem5] = useState<boolean>(false);
+  const [isMenuMobileItem6, setMenuMobileItem6] = useState<boolean>(false);
+
+  const menuMobileItem1Title = document.getElementById("menu__mobile--item1--title");
+  const menuMobileItem1Arrow = document.getElementById("menu__mobile--item1--arrow");
+  const menuMobileItem1Child = document.getElementById("menu__mobile--item1--child");
+
+  const menuMobileItem5Title = document.getElementById("menu__mobile--item5--title");
+  const menuMobileItem5Arrow = document.getElementById("menu__mobile--item5--arrow");
+  const menuMobileItem5Child = document.getElementById("menu__mobile--item5--child");
+
+  const menuMobileItem6Title = document.getElementById("menu__mobile--item6--title");
+  const menuMobileItem6Arrow = document.getElementById("menu__mobile--item6--arrow");
+  const menuMobileItem6Child = document.getElementById("menu__mobile--item6--child");
+
+  useEffect(() => {
+      menuMobileItem1Title?.classList.toggle("menu__mobile--item--active");
+      menuMobileItem1Arrow?.classList.toggle("rotate-arrow");
+      menuMobileItem1Child?.classList.toggle("hidden");
+  }, [isMenuMobileItem1]);
+
+  useEffect(() => {
+      menuMobileItem5Title?.classList.toggle("menu__mobile--item--active");
+      menuMobileItem5Arrow?.classList.toggle("rotate-arrow");
+      menuMobileItem5Child?.classList.toggle("hidden");
+  }, [isMenuMobileItem5]);
+
+  useEffect(() => {
+      menuMobileItem6Title?.classList.toggle("menu__mobile--item--active");
+      menuMobileItem6Arrow?.classList.toggle("rotate-arrow");
+      menuMobileItem6Child?.classList.toggle("hidden");
+  }, [isMenuMobileItem6]);
+
   const menuToggle = () => {
     const hamburger = document.getElementById("mobile-menu");
-    // if(open) {
-    //   hamburger?.classList.add("hidden");
-    //   hamburger?.classList.remove("right-[0%]");
-    //   hamburger?.classList.add("-right-[110%]");
-    // }else{
-    //   hamburger?.classList.remove("hidden");
-    //   hamburger?.classList.remove("-right-[110%]");
-    //   hamburger?.classList.add("right-[0%]");
-    // }
 
-    hamburger?.classList.toggle("-right-[110%]");
-    hamburger?.classList.toggle("right-[0%]");
+    hamburger?.classList.toggle("-left-[110%]");
+    hamburger?.classList.toggle("left-[0%]");
     setOpen(!open);
   }
 
   return (
     <div>
-      {/* <div className="mt-20 absolute h-screen w-screen bg-black z-10 -right-[110%] duration-200 delay-75 text-white md:hidden" id="mobile-menu">
-        <ul>
-          <li>Home</li>
-          <li>Home</li>
-          <li>Home</li>
-          <li>Home</li>
-          <li>Home</li>
+      <div className="mt-20 fixed h-screen w-screen bg-[#1f1f1f] z-20 -left-[110%] duration-200 delay-75 text-white md:hidden px-8" id="mobile-menu">
+        <ul className="flex flex-col gap-6 py-5">
+
+
+          <li onClick={()=>setMenuMobileItem1(!isMenuMobileItem1)}>
+            <div id="menu__mobile--item1--title" className="flex justify-between items-center text-lg font-semibold p-2 rounded-md">
+              <div className="flex">THÔNG TIN TRÒ CHƠI</div>
+              <svg id="menu__mobile--item1--arrow" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 12 16" className="transition-all duration-300" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M0 5l6 6 6-6H0z"></path></svg>
+            </div>
+            <ul id="menu__mobile--item1--child" className="hidden flex flex-col gap-2 pt-2 text-gray-500 font-semibold text-sm">
+              <li className="p-2 hover:bg-[#333] rounded-md"><a href="">ĐIỆP VIÊN</a></li>
+              <li className="p-2 hover:bg-[#333] rounded-md"><a href="">BẢN ĐỒ</a></li>
+              <li className="p-2 hover:bg-[#333] rounded-md"><a href="">KHO VŨ KHÍ</a></li>
+            </ul>
+          </li>
+          
+
+
+          <li className="p-2 font-semibold"><a href="#">TRUYỀN THÔNG</a></li>
+          <li className="p-2 font-semibold"><a href="#">TIN TỨC</a></li>
+          <li className="p-2 font-semibold"><a href="#">BẢNG XẾP HẠNG</a></li>
+
+
+          <li onClick={()=>setMenuMobileItem5(!isMenuMobileItem5)}>
+            <div id="menu__mobile--item5--title" className="flex justify-between items-center text-lg font-semibold p-2 rounded-md">
+              <div className="flex">HỖ TRỢ</div>
+              <svg id="menu__mobile--item5--arrow" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 12 16" className="transition-all duration-300" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M0 5l6 6 6-6H0z"></path></svg>
+            </div>
+            <ul id="menu__mobile--item5--child" className="hidden flex flex-col gap-2 pt-2 text-gray-500 font-semibold text-sm">
+              <li className="p-2 hover:bg-[#333] rounded-md"><a href="">THÔNG SỐ</a></li>
+              <li className="p-2 hover:bg-[#333] rounded-md"><a href="">HỖ TRỢ</a></li>
+              <li className="p-2 hover:bg-[#333] rounded-md"><a href="">QUY CHUẨN CỘNG ĐỒNG</a></li>
+            </ul>
+          </li>
+
+
+          <li onClick={()=>setMenuMobileItem6(!isMenuMobileItem6)}>
+            <div id="menu__mobile--item6--title" className="flex justify-between items-center text-lg font-semibold p-2 rounded-md">
+              <div className="flex">MẠNG XÃ HỘI</div>
+              <svg id="menu__mobile--item6--arrow" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 12 16" className="transition-all duration-300" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M0 5l6 6 6-6H0z"></path></svg>
+            </div>
+            <ul id="menu__mobile--item6--child" className="hidden flex flex-col gap-2 pt-2 text-gray-500 font-semibold text-sm">
+              <li className="p-2 hover:bg-[#333] rounded-md"><a href="">FACEBOOK</a></li>
+              <li className="p-2 hover:bg-[#333] rounded-md"><a href="">YOUTUBE</a></li>
+              <li className="p-2 hover:bg-[#333] rounded-md"><a href="">TIKTOK</a></li>
+            </ul>
+          </li>
+
+
+          <li className="p-2 font-semibold"><a href="#">GÓC NEWBIE</a></li>
+          <li className="p-2 font-semibold"><a href="#">SỰ KIỆN</a></li>
+          <li className="p-2 font-semibold"><a href="#">THÊM</a></li>
+
+
+
+
         </ul>
-      </div> */}
+      </div>
       <div className="fixed w-screen h-20 bg-black flex flex-row items-center justify-between z-20">
         <div className="flex flex-row">
           <svg

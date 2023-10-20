@@ -3,9 +3,14 @@ import "../index.css";
 import title from "../img/title.png";
 
 function Frame1() {
+  const scrollToFrame2 = () => {
+    const element = document.getElementById('frame2');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <div className="w-screen overflow-hidden bg-cta-mobile md:bg-cta-desktop bg-no-repeat bg-cover bg-center min-h-screen xl:min-h-screen">
-
       <div className="absolute hidden md:flex flex-row items-center justify-between text-white top-[5.5rem] w-[100%]">
         <div className="flex items-center">
           <div className="w-2 bg-white h-2 mx-2"></div>
@@ -31,20 +36,26 @@ function Frame1() {
         </div>
       </div>
       <div className="relative flex flex-col items-center justify-center h-screen md:h-fit md:mt-28">
-        <img src={title} alt="title" className="w-[90%] md:w-[70%] lg:w-[50%]"/>
+        <img
+          src={title}
+          alt="title"
+          className="w-[90%] md:w-[70%] lg:w-[50%]"
+        />
         <p className="flex justify-center text-center text-white w-[85%] lg:w-[40%] mb-6 text-sm font-semibold relative lg:text-xl">
           Giải thưởng nhằm ghi nhận những khoảnh khắc nổi bật và thành tựu xuất
           sắc của cộng đồng Valorant Việt Nam trong năm 2022.
         </p>
-        <button className=" relative bg-[#ff4655] text-white p-4 px-12 mb-6
+
+        <button onClick={scrollToFrame2}
+          className=" relative bg-[#ff4655] text-white p-4 px-12 mb-6
         before:contents[''] before:w-[110%] before:border-t before:border-l before:border-r before:h-6 before:border-white before:absolute before:-top-2 before:-left-[5%]
-        after:contents[''] after:w-[110%] after:border-b after:border-l after:border-r after:h-6 after:border-white after:absolute after:-bottom-2 after:-right-[5%] button__cta">
+        after:contents[''] after:w-[110%] after:border-b after:border-l after:border-r after:h-6 after:border-white after:absolute after:-bottom-2 after:-right-[5%] button__cta"
+        >
           <div className="absolute bottom-0 left-0 w-full h-full overflow-hidden ">
             <div className="relative bg-black w-[120%] h-full -left-[140%] button__cta--skew--box transition-all ease-linear duration-300 -skew-x-12"></div>
           </div>
           <span className="relative text-base font-bold">Tìm Hiểu Ngay</span>
           <div className="absolute bottom-0 right-0 4 w-1 h-1 bg-black button__cta--small--box"></div>
-
         </button>
       </div>
     </div>

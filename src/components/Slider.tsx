@@ -4,6 +4,7 @@ import "keen-slider/keen-slider.min.css";
 import { awards } from "../data/dataList";
 import "../index.css";
 import NomineeContainer from "./NomineeContainer";
+import NomineeSlider from "./NomineeSlider";
 
 export default function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -29,6 +30,16 @@ export default function Slider() {
     },
   });
 
+  const handleSelectChange = (event: any) => {
+    const selectedValue = event.target.value;
+
+    const selectedIndex = awards.findIndex(
+      (award) => award.title === selectedValue
+    );
+
+    setCurrentSlide(selectedIndex);
+  };
+
   useEffect(() => {
     const allSelectedBG = document.querySelectorAll(".bg-selectedBG");
     allSelectedBG.forEach((element) => {
@@ -44,15 +55,15 @@ export default function Slider() {
 
   return (
     <>
-      <div className="hidden lg:block navigation-wrapper">
-        <div ref={sliderRef} className="keen-slider w-[90%] lg:w-[700px]">
+      <div className="hidden lg:block navigation-wrapper mb-3">
+        <div ref={sliderRef} className="keen-slider lg:w-[800px]">
           {awards.map((award, idx) => {
             return (
               <div
                 key={idx}
                 className={`keen-slider__slide number-slide${
                   idx + 1
-                } bg-selectedBG`}
+                } bg-selectedBG h-44`}
               >
                 {award.title}
               </div>
@@ -82,27 +93,27 @@ export default function Slider() {
         )}
       </div>
 
-      <select name="Award List" id="award-list">
-        {awards.map((award, idx) => {
-          return (
-            <option key={idx} value={award.title}>
+      <div className="">
+        <select
+          className="lg:hidden bg-mobileSelectedBG bg-cover w-full h-16 text-white text-xl font-bold border-2 border-red-500 text-center mb-2"
+          name="Award List"
+          id="award-list"
+          onChange={handleSelectChange}
+        >
+          {awards.map((award, idx) => (
+            <option className="text-black" key={idx} value={award.title}>
               {award.title}
             </option>
-          );
-        })}
-      </select>
+          ))}
+        </select>
+      </div>
 
       {currentSlide === 0 && <NomineeContainer award={awards[0]} />}
       {currentSlide === 1 && (
-        <div>
-          <h1 className="text-white text-3xl font-bold">
-            SKIN FINISHER YÊU THÍCH NHẤT
-          </h1>
-          <p className="text-white text-xl">
-            Các skin finisher được đánh giá dựa trên các tiêu chí: độ hiếm, độ
-            đẹp, độ ấn tượng, độ phù hợp với vũ khí,...
-          </p>
-        </div>
+        <>
+          <NomineeSlider award={awards[1]} />
+          <NomineeContainer award={awards[1]} />
+        </>
       )}
       {currentSlide === 2 && <NomineeContainer award={awards[2]} />}
       {currentSlide === 3 && <NomineeContainer award={awards[3]} />}
