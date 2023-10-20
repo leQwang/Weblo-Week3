@@ -21,31 +21,34 @@ body {
   @apply p-2 bg-[#333] rounded-md;
 }
 
-.rotate-arrow{
+.rotate-arrow {
   @apply transform rotate-180;
 }
 
-.menu__desktop1:hover div:nth-child(1){
+.menu__desktop1:hover div:nth-child(1) {
   @apply top-0 left-0;
 }
 
-.menu__desktop1:hover div:nth-child(2), .menu__desktop1 div:nth-child(2):hover{
+.menu__desktop1:hover div:nth-child(2),
+.menu__desktop1 div:nth-child(2):hover {
   @apply block;
 }
 
-.menu__desktop2:hover div:nth-child(1){
+.menu__desktop2:hover div:nth-child(1) {
   @apply top-0 left-0;
 }
 
-.menu__desktop2:hover div:nth-child(2), .menu__desktop2 div:nth-child(2):hover{
+.menu__desktop2:hover div:nth-child(2),
+.menu__desktop2 div:nth-child(2):hover {
   @apply block;
 }
 
-.menu__desktop3:hover div:nth-child(1){
+.menu__desktop3:hover div:nth-child(1) {
   @apply top-0 left-0;
 }
 
-.menu__desktop3:hover div:nth-child(2), .menu__desktop3 div:nth-child(2):hover{
+.menu__desktop3:hover div:nth-child(2),
+.menu__desktop3 div:nth-child(2):hover {
   @apply block;
 }
 
@@ -59,27 +62,20 @@ body {
 
 /* ------------------ */
 
-
-
 .keen-slider__slide {
   @apply flex justify-center items-center min-w-[1rem] text-white text-2xl font-semibold uppercase text-center border;
 }
 
-.frame2__button--mobile:hover path, .frame2__button--mobile:hover {
+.frame2__button--mobile:hover path,
+.frame2__button--mobile:hover {
   @apply fill-white text-white duration-75;
 }
 
-
 /* ------------------- */
 
-.button__footer:hover div:nth-child(1){
+.button__footer:hover div:nth-child(1) {
   @apply top-0 left-0;
 }
-
-
-
-
-
 
 /*  ----------------- */
 .navigation-wrapper {
@@ -181,7 +177,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
-  fill: #FF4655;
+  fill: #ff4655;
   cursor: pointer;
 }
 
