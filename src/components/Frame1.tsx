@@ -35,7 +35,7 @@ function Frame1() {
           <div className="w-2 bg-white h-2 mx-2"></div>
         </div>
       </div>
-      <div className="relative flex flex-col items-center justify-center h-screen md:h-fit md:mt-28">
+      <div className="relative flex flex-col items-center justify-center h-screen md:h-fit md:mt-32">
         <img
           src={title}
           alt="title"

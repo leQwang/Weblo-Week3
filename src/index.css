@@ -26,6 +26,30 @@ body {
   @apply transform rotate-180;
 }
 
+.menu__desktop1:hover div:nth-child(1){
+  @apply top-0 left-0;
+}
+
+.menu__desktop1:hover div:nth-child(2), .menu__desktop1 div:nth-child(2):hover{
+  @apply block;
+}
+
+.menu__desktop2:hover div:nth-child(1){
+  @apply top-0 left-0;
+}
+
+.menu__desktop2:hover div:nth-child(2), .menu__desktop2 div:nth-child(2):hover{
+  @apply block;
+}
+
+.menu__desktop3:hover div:nth-child(1){
+  @apply top-0 left-0;
+}
+
+.menu__desktop3:hover div:nth-child(2), .menu__desktop3 div:nth-child(2):hover{
+  @apply block;
+}
+
 .button__cta:hover .button__cta--small--box {
   @apply bg-white;
 }

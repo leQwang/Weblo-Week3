@@ -61,7 +61,7 @@ function Frame3() {
           <img className="w-44" src={vngLogo} alt="vng logo" />
         </div>
         <div className="mb-8">© 2022 Riot games, Inc</div>
-        <div className="text-center mb-10">Công Ty Cổ Phần VNG. Địa chỉ: Lô 03b-04-05-06-07, đường số 13, khu Công Nghiệp, Khu Chế Xuất Tân Thuận, phường Tân Thuận Đông, Quận 7, TP.HCM.</div>
+        <div className="text-center mb-8 mx-5">Công Ty Cổ Phần VNG. Địa chỉ: Lô 03b-04-05-06-07, đường số 13, khu Công Nghiệp, Khu Chế Xuất Tân Thuận, phường Tân Thuận Đông, Quận 7, TP.HCM.</div>
         <div className="flex flex-col  items-center font-bold mb-5">
           <a className="my-2" href="#">CHÍNH SÁCH BẢO MẬT</a>
           <a className="my-2" href="#">ĐIỀU KHOẢN SỬ DỤNG (RIOT)</a>
