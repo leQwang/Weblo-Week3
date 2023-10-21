@@ -60,8 +60,22 @@ export default function Slider() {
           {awards.map((award, idx) => {
             return (
               <div
+                onClick={() => {
+                    if(currentSlide < idx){
+                      setCurrentSlide(idx)
+                      instanceRef.current?.next()
+                    }
+                    if(currentSlide > idx){
+                      setCurrentSlide(idx)
+                      instanceRef.current?.prev()
+                    }
+                    }
+                  }
+                    
+
+
                 key={idx}
-                className={`keen-slider__slide number-slide${
+                className={`cursor-pointer keen-slider__slide number-slide${
                   idx + 1
                 } bg-selectedBG h-44`}
               >
